@@ -2,21 +2,17 @@
     display: inline-block;
 }
 
+.edit-icons {
+    display: none;
+}
+
 .panel:hover {
     -webkit-box-shadow: 10px 10px 5px -8px rgba(0,0,0,0.75);
     -moz-box-shadow: 10px 10px 5px -8px rgba(0,0,0,0.75);
     box-shadow: 10px 10px 5px -8px rgba(0,0,0,0.75);
 }
 
-.edit-icons {
-    display: none;
-}
-
 .form-group {
-    width: 100%;
-}
-
-.bookmark .form-group {
     width: 100%;
 }
 
