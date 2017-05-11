@@ -1,0 +1,25 @@
+.bookmark:hover .edit-icons {
+    display: inline-block;
+}
+
+.bookmark:hover Panel {
+    -webkit-box-shadow: 10px 10px 5px -8px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px -8px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 5px -8px rgba(0,0,0,0.75);
+}
+
+.edit-icons {
+    display: none;
+}
+
+.form-group {
+    width: 100%;
+}
+
+.bookmark .form-group {
+    width: 100%;
+}
+
+.glyphicon {
+    padding: 0 3px;
+}

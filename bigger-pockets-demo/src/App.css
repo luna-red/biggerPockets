@@ -1,0 +1,21 @@
+header {
+  margin: 0 auto 80px;
+  text-align: center;
+}
+
+.form-inline .form-control {
+  border-radius: 0;
+  width: 100%;
+}
+
+.form-group {
+  width: 49%;
+}
+
+.btn {
+  padding: 6px 22px;
+}
+
+ListingForm {
+  margin-bottom: 80px;
+}
