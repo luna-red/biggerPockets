@@ -23,12 +23,12 @@ export function getListings() {
         method: 'GET',
         headers: headers()
     })
-        .then(response => checkStatus(response))
-        .then(response => response.json())
-        .then(response => response.data)
-        .catch(function(ex) {
-            console.log('parsing failed', ex)
-        })
+    .then(response => checkStatus(response))
+    .then(response => response.json())
+    .then(response => response.data)
+    .catch(function(ex) {
+        console.log('parsing failed', ex)
+    })
 }
 
 export function postListing(title, url){
@@ -45,12 +45,12 @@ export function postListing(title, url){
             }
         })
     })
-        .then(response => checkStatus(response))
-        .then(response => response.json())
-        .then(response => response.data)
-        .catch(function(ex) {
-            console.log('parsing failed', ex)
-        })
+    .then(response => checkStatus(response))
+    .then(response => response.json())
+    .then(response => response.data)
+    .catch(function(ex) {
+        console.log('parsing failed', ex)
+    })
 }
 
 export function deleteListing(id) {
@@ -59,12 +59,12 @@ export function deleteListing(id) {
         method: 'DELETE',
         headers: headers()
     })
-        .then(response => checkStatus(response))
-        .then(response => response.json())
-        .then(response => response.data)
-        .catch(function(ex) {
-            console.log('parsing failed', ex)
-        })
+    .then(response => checkStatus(response))
+    .then(response => response.json())
+    .then(response => response.data)
+    .catch(function(ex) {
+        console.log('parsing failed', ex)
+    })
 }
 
 export function updateListing(id, title, url) {
@@ -82,10 +82,10 @@ export function updateListing(id, title, url) {
             }
         })
     })
-        .then(response => checkStatus(response))
-        .then(response => response.json())
-        .then(response => response.data)
-        .catch(function(ex) {
-            console.log('parsing failed', ex)
-        })
+    .then(response => checkStatus(response))
+    .then(response => response.json())
+    .then(response => response.data)
+    .catch(function(ex) {
+        console.log('parsing failed', ex)
+    })
 }
