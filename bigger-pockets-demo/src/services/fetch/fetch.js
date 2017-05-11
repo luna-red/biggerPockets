@@ -6,17 +6,17 @@ let checkStatus = (response) => {
     if (response.status >= 200 && response.status < 300) {
         return response
     } else {
-        var error = new Error(response.statusText)
-        error.response = response
-        throw error
+        let error = new Error(response.statusText);
+        error.response = response;
+        throw error;
     }
-}
+};
 let headers = () => {
     return {
         'Authorization': 'b2a55b1539abbeaf13da1bfcb395c86e',
         'Content-Type': 'application/json'
-    }
-}
+    };
+};
 export function getListings() {
     return fetch(apiUrl, {
         credentials: 'include',
@@ -28,7 +28,7 @@ export function getListings() {
     .then(response => response.data)
     .catch(function(ex) {
         console.log('parsing failed', ex)
-    })
+    });
 }
 
 export function postListing(title, url){
@@ -50,7 +50,7 @@ export function postListing(title, url){
     .then(response => response.data)
     .catch(function(ex) {
         console.log('parsing failed', ex)
-    })
+    });
 }
 
 export function deleteListing(id) {
@@ -64,7 +64,7 @@ export function deleteListing(id) {
     .then(response => response.data)
     .catch(function(ex) {
         console.log('parsing failed', ex)
-    })
+    });
 }
 
 export function updateListing(id, title, url) {
@@ -87,5 +87,5 @@ export function updateListing(id, title, url) {
     .then(response => response.data)
     .catch(function(ex) {
         console.log('parsing failed', ex)
-    })
+    });
 }

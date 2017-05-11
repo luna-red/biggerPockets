@@ -19,8 +19,8 @@ class App extends React.Component {
         };
     };
     componentDidMount = () => {
-        getListings().then((json) => this.setState({bookmarks: json}))
-    }
+        getListings().then((json) => this.setState({bookmarks: json}));
+    };
     eachBookmark = (bookmark) => {
         return (
             <Bookmark url={bookmark.attributes.url}
@@ -30,15 +30,15 @@ class App extends React.Component {
                       onChange={this.update.bind(this)}
                       onRemove={this.remove.bind(this)}></Bookmark>
         )
-    }
+    };
     nextId = () => {
-        this.uniqueId = this.uniqueId || 0
-        return this.uniqueId++
-    }
+        this.uniqueId = this.uniqueId || 0;
+        return this.uniqueId++;
+    };
     createBookmark = (newTitle, newUrl) => {
-        var self = this
+        let self = this;
         postListing(newTitle, newUrl).then((json) => {
-            var bookmarks = [
+            let bookmarks = [
                 ...this.state.bookmarks,
                 {
                     id: json.id,
@@ -47,25 +47,25 @@ class App extends React.Component {
                         url: json.attributes.url
                     }
                 }
-            ]
-            self.setState({bookmarks: bookmarks, title: '', url: ''})
+            ];
+            self.setState({bookmarks: bookmarks, title: '', url: ''});
         })
-    }
+    };
     update = (id, newTitle, newUrl) => {
-        var self = this
+        let self = this;
         updateListing(id, newTitle, newUrl).then(json => {
-            var bookmarks = this.state.bookmarks.map(
+            let bookmarks = this.state.bookmarks.map(
                 bookmark => (bookmark.id !== id) ? bookmark
                     : {...bookmark, attributes: {title: newTitle, url: newUrl} }
-            )
-            self.setState({bookmarks: bookmarks})
+            );
+            self.setState({bookmarks: bookmarks});
         })
-    }
+    };
     remove = (id) => {
-        deleteListing(id)
-        var bookmarks = this.state.bookmarks.filter((bookmark) => bookmark.id !== id)
-        this.setState({bookmarks: bookmarks})
-    }
+        deleteListing(id);
+        let bookmarks = this.state.bookmarks.filter((bookmark) => bookmark.id !== id);
+        this.setState({bookmarks: bookmarks});
+    };
     render() {
         return (
             <div>
@@ -74,7 +74,7 @@ class App extends React.Component {
                     {this.state.bookmarks.map(this.eachBookmark)}
                 </Col>
             </div>
-        )
+        );
     }
 
 }

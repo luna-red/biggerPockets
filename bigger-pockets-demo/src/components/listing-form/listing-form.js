@@ -4,31 +4,31 @@ import './listing-form.css';
 
 class ListingForm extends Component {
     constructor(props) {
-        super(props)
+        super(props);
         this.state = {
             title: '',
             url: ''
-        }
+        };
     }
     isEnabled = () => {
-        var patt = new RegExp(/^(https?:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})([/\w .-]*)*\/?$/);
-        var res = patt.test(this.state.url);
+        let patt = new RegExp(/^(https?:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})([/\w .-]*)*\/?$/);
+        let res = patt.test(this.state.url);
         return this.state.title.length > 0 && res;
-    }
+    };
     validate = () => {
-        return (this.isEnabled()) ? true: false
-    }
+        return !(this.isEnabled());
+    };
     newBookmark = (e) => {
         e.stopPropagation();
-        this.props.onCreate(this.state.title, this.state.url)
-        this.setState({title: '', url: ''})
-    }
+        this.props.onCreate(this.state.title, this.state.url);
+        this.setState({title: '', url: ''});
+    };
     newName = (e) => {
-        this.setState({title: e.target.value})
-    }
+        this.setState({title: e.target.value});
+    };
     newUrl = (e) => {
-        this.setState({url: e.target.value})
-    }
+        this.setState({url: e.target.value});
+    };
     render() {
         return (
             <div>
@@ -66,7 +66,7 @@ class ListingForm extends Component {
                     </Col>
                 </Col>
             </div>
-        )
+        );
     }
 }
 export default ListingForm;
